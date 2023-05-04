@@ -5,7 +5,7 @@ description = "A streamlit based app for validating Illumina Nextseq 2000 sample
 authors = ["thanhleviet <thanh.le-viet@quadram.ac.uk>"]
 license = "GPLv3"
 readme = "README.md"
-packages = [{include = "sample_sheet_validator"}]
+# packages = [{include = "sample_sheet_validator"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
