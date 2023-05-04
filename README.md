@@ -23,6 +23,8 @@ streamlit run app.py
 
 This will launch a web interface that allows you to upload a sample sheet file and configure various options for processing the data.
 
+See live version at <https://thanhleviet-sample-sheet-validator-app-22jf26.streamlit.app/>
+
 ## Authors
 
 Thanh Le-Viet
