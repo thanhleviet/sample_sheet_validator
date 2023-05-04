@@ -7,6 +7,7 @@ Converting column names to title case
 Generating a processed sample sheet with headers in the expected format
 Providing a link to download the processed sample sheet in CSV format
 
+[![.github/workflows/test.yml](https://github.com/thanhleviet/sample_sheet_validator/actions/workflows/test.yml/badge.svg)](https://github.com/thanhleviet/sample_sheet_validator/actions/workflows/test.yml)
 ## Installation
 This script requires Python 3 and several third-party libraries to run. You can install the required dependencies using poetry by running the following command:
 
