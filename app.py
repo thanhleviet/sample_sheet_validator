@@ -102,7 +102,7 @@ def main():
             👆 Upload a file to get started! See the example below for the expected format.
             """
         )
-        image = Image.open('./app/static/table.png')
+        image = Image.open('./static/table.png')
         st.image(image, caption='Example of a valid sample sheet', use_column_width=False)
 
     st.text_input('Run name', key='run_name', value='nextseq2000', help='Run name')
