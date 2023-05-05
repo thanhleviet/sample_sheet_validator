@@ -108,7 +108,7 @@ def main():
     st.text_input('Run name', key='run_name', value='nextseq2000', help='Run name')
     st.text_input('Adapter Read 1', key='adapter_read1', value='AGATCGGAAGAGCACACGTCTGAACTCCAGTCA', help='Adapter sequence of Read 1')
     st.text_input('Adapter Read 2', key='adapter_read2', value='AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT', help='Adapter sequence of Read 2')
-    st.text_input('BCL Convert version', key='bcl_version', value='3.11.5', help='BCL Convert version')
+    st.text_input('BCL Convert version', key='bcl_version', value='3.10.11', help='BCL Convert version')
 
     col_read1cycle, col_read2cycle = st.columns(2, gap='medium')
     with col_read1cycle:
