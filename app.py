@@ -63,7 +63,7 @@ def rename_duplicates(df, column):
     for index, row in df.iterrows():
         if duplicates[index]:
             count = duplicates[:index].sum()
-            new_value = f'{row[column]}_{count + 1}'
+            new_value = f'{row[column]}-{count + 1}'
             new_df.loc[index, column] = new_value
 
     return new_df
