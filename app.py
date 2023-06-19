@@ -44,6 +44,30 @@ def remove_unicode(df):
         df[col] = df[col].str.replace(r"\\U[a-zA-Z0-9]{8}", "", regex=True)
     return df
 
+def rename_duplicates(df, column):
+    """
+    Rename duplicated values in a column of a DataFrame.
+
+    Args:
+        df (pandas.DataFrame): The DataFrame containing the column to rename.
+        column (str): The name of the column to process.
+
+    Returns:
+        pandas.DataFrame: A copy of the input DataFrame with duplicated values in the specified column renamed.
+
+    """
+
+    duplicates = df.duplicated(column)
+    new_df = df.copy()
+
+    for index, row in df.iterrows():
+        if duplicates[index]:
+            count = duplicates[:index].sum()
+            new_value = f'{row[column]}_{count + 1}'
+            new_df.loc[index, column] = new_value
+
+    return new_df
+
 def columns_to_title_case(df):
     """
     Returns a new DataFrame with column names in title case format.
@@ -68,6 +92,8 @@ def process_data(data,HEADER_TEXT):
     formatted_date = today.strftime('%Y-%m-%d')
     # Replace multiple special characters in Sample_ID with a single hyphen
     data["Sample_Id"] = data["Sample_Id"].apply(replace_special_characters)
+    # Rename duplicate sample id
+    data = rename_duplicates(data, "Sample_Id")
     # Append processed data to headers
     headers = HEADER_TEXT + "\n" + data.to_csv(index=False)
     # Show link to download processed file
